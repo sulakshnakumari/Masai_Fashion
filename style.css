@@ -75,20 +75,24 @@ button {
     align-items: center;
 }
 
-.nav-categories ul {
-    display: flex;
-    gap: 20px;
+.top-nav .nav-categories ul {
+    display: flex !important;
+    gap: 20px !important;
+    padding-left: 0 !important;
+    margin-bottom: 0 !important;
 }
 
-.nav-categories a {
-    font-size: 14px;
+.top-nav .nav-categories a {
+    font-size: 14px !important;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 500;
+    color: inherit !important;
+    text-decoration: none !important;
 }
 
-.nav-categories a:hover {
-    color: var(--accent-color);
+.top-nav .nav-categories a:hover {
+    color: goldenrod !important;
 }
 
 .logo {
@@ -118,9 +122,10 @@ button {
     border: none;
     padding: 8px 10px;
     width: 180px;
-    color: var(--light-text);
+    color: var(--text-color); /* Change to darker text */
     font-size: 12px;
 }
+
 
 .search-bar input::placeholder {
     color: black;
@@ -411,6 +416,13 @@ address {
     opacity: 0.8;
 }
 
+.carousel-item img {
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
 /* Responsive Styles */
 @media (max-width: 992px) {
     .collection-grid {
@@ -508,4 +520,73 @@ address {
         width: 100%;
         text-align: center;
     }
+}
+
+/* Extra small devices (up to 480px) */
+@media (max-width: 480px) {
+    .top-nav .container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .nav-categories ul {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .search-bar input {
+        width: 100%;
+    }
+
+    .hero-section {
+        height: auto;
+    }
+
+    .collection-info h3 {
+        font-size: 1.2rem;
+    }
+
+    .collection-info p {
+        font-size: 0.8rem;
+    }
+
+    .shop-now-btn {
+        font-size: 12px;
+        padding: 6px 16px;
+    }
+
+    .footer-sections {
+        gap: 20px;
+    }
+
+    .newsletter {
+        flex-direction: column;
+    }
+
+    .newsletter input,
+    .newsletter button {
+        width: 100%;
+        border-radius: 4px;
+        margin-top: 5px;
+    }
+
+    .carousel-item img {
+        height: auto;
+    }
+}
+
+/* Fix: add horizontal scrolling fallback for nav items on small screens */
+.nav-categories ul {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+/* Optional: smooth horizontal scrolling for nav */
+.nav-categories ul::-webkit-scrollbar {
+    height: 5px;
+}
+.nav-categories ul::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 10px;
 }
