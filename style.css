@@ -446,37 +446,57 @@ address {
     }
 }
 
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
 @media (max-width: 768px) {
-    .top-nav .container {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
     .nav-categories {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
         width: 100%;
-        overflow-x: auto;
+        background-color: white;
+        z-index: 999;
     }
-    
+
     .nav-categories ul {
-        width: max-content;
+        flex-direction: column;
+        padding: 10px 20px;
     }
-    
-    .hero-overlay h1 {
-        font-size: 3rem;
+
+    .nav-categories.show {
+        display: block;
     }
-    
-    .hero-overlay h1 span {
-        font-size: 3.5rem;
+
+    .nav-toggle {
+        display: block;
     }
-    
-    .footer-sections {
-        grid-template-columns: 1fr;
+
+    .top-nav .container {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
     }
-    
-    .collection-item img {
-        height: 300px;
+
+    .logo {
+        order: -1;
+    }
+
+    .nav-actions {
+        order: 2;
+        width: 100%;
+        margin-top: 10px;
     }
 }
+
 
 @media (max-width: 576px) {
     .nav-actions {

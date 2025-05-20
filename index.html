@@ -15,7 +15,13 @@
     <!-- Top Navigation Bar -->
     <nav class="top-nav">
         <div class="container">
-            <div class="nav-categories">
+            <!-- Hamburger icon for small screens -->
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-ellipsis-v"></i> <!-- 3 dots icon -->
+            </button>
+
+            <!-- Nav Categories -->
+            <div class="nav-categories" id="navMenu">
                 <ul>
                     <li><a href="#women">WOMEN</a></li>
                     <li><a href="#men">MEN</a></li>
@@ -24,20 +30,24 @@
                     <li><a href="#store-locations" class="store-finder"><i class="fas fa-store"></i> Find Store</a></li>
                 </ul>
             </div>
+
+            <!-- Logo -->
             <div class="logo">
                 <a href="/">
                     <img src="logo.png" alt="KALKI Fashion Logo">
                 </a>
             </div>
+
+            <!-- Search Bar -->
             <div class="nav-actions">
                 <div class="search-bar">
                     <input type="text" id="searchInput" placeholder="Search for Saree" />
                     <button type="submit"><i class="fas fa-search"></i></button>
                 </div>
             </div>
-
         </div>
     </nav>
+
 
     <!-- Hero Section -->
     <section class="hero-section">
@@ -173,6 +183,16 @@
         }
 
         typeEffect();
+
+        //Onclicking the 3-dots , showing menu 
+        document.addEventListener("DOMContentLoaded", () => {
+            const toggleBtn = document.getElementById("navToggle");
+            const navMenu = document.getElementById("navMenu");
+
+            toggleBtn.addEventListener("click", () => {
+            navMenu.classList.toggle("show");
+            });
+        });
     </script>
 
 </body>
